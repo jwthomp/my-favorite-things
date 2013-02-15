@@ -1,9 +1,15 @@
 #!/bin/bash
 
+if [ $# -ne 1 ]
+then
+  echo "Usage: `basename $0` {project_name}"
+  exit $E_BADARGS
+fi
+
 if [ "${PWD##*/}" != "$1" ] 
 then
   echo "Error: Current working directory is not $1"
-  exit -1
+  exit $E_BADARGS
 fi
 
 # Create run script and make it executable
