@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "${PWD##*/}" != "$1" ] 
+then
+  echo "Error: Current working directory is not $1"
+  exit -1
+fi
 
 # Create run script and make it executable
 echo "#!/bin/bash
