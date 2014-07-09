@@ -1,0 +1,3 @@
+alias pullgits='find . -maxdepth 2 -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git pull" \;'
+alias pushgits='find . -maxdepth 2 -type d -name .git -exec sh -c "cd \"{}\"/../ && pwd && git push" \;'
+alias dps="docker ps | awk '{ printf(\"%15s %30s %10s\n\", \$1, \$2, \$3)}'"
